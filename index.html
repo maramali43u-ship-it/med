@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع معلومات الأدوية - حمص</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+</head>
+<body>
+    <!-- نافذة منبثقة لطلب اسم المستخدم -->
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="welcome-modal-content glass-effect">
+            <div class="welcome-header">
+                <div class="welcome-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h2>مرحباً بك في موقع معلومات الأدوية</h2>
+            </div>
+            <p>يرجى إدخال اسمك للمتابعة:</p>
+            <div class="input-group">
+                <input type="text" id="user-name-input" placeholder="أدخل اسمك هنا" maxlength="30">
+                <i class="fas fa-user input-icon"></i>
+            </div>
+            <button id="submit-name-btn" class="submit-btn">
+                <span>دخول</span>
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- الشريط الجانبي -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="user-profile">
+                <div class="user-avatar" id="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <span id="user-name-display">زائر</span>
+                    <small>صيدلاني</small>
+                </div>
+            </div>
+            <button id="close-sidebar-btn" class="close-sidebar-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="1">
+                <i class="fas fa-home"></i>
+                <span>الصفحة الرئيسية</span>
+            </a>
+            <a href="#" class="nav-item" data-page="2">
+                <i class="fas fa-pills"></i>
+                <span>أنواع الأدوية</span>
+            </a>
+            <a href="#" class="nav-item" data-page="3">
+                <i class="fas fa-list"></i>
+                <span>قائمة الأدوية</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-item" id="theme-toggle-nav">
+                <i class="fas fa-moon"></i>
+                <span>الوضع الليلي</span>
+            </a>
+            <a href="#" class="nav-item" id="settings-nav">
+                <i class="fas fa-cog"></i>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">75</span>
+                    <span class="stat-label">دواء</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">تصنيف</span>
+                </div>
+            </div>
+            <p>تصميم وتطوير: Youlla Al Abdullah</p>
+            <div class="social-links">
+                <a href="#" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="تويتر"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="لينكدإن"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر فتح الشريط الجانبي -->
+    <button id="menu-toggle-btn" class="menu-toggle-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- الصفحة الأولى -->
+    <section id="page1" class="page active">
+        <div class="header-p1">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h1>موقع معلومات الأدوية</h1>
+                <p>كلية الصيدلة - محافظة حمص</p>
+            </div>
+            <div class="welcome-message">
+                <p>أهلاً بك <span id="welcome-user-name">زائر</span> في قسم الأدوية</p>
+                <div class="welcome-subtitle">مصدرك الموثوق للمعلومات الدوائية</div>
+            </div>
+            <button id="enter-btn" class="enter-button">
+                <span>استكشف الموقع</span>
+                <i class="fas fa-arrow-left"></i>
+                <div class="button-ripple"></div>
+            </button>
+            <div class="floating-elements">
+                <div class="floating-pill pill1"></div>
+                <div class="floating-pill pill2"></div>
+                <div class="floating-pill pill3"></div>
+                <div class="floating-pill pill4"></div>
+                <div class="floating-pill pill5"></div>
+            </div>
+        </div>
+        <div class="features-preview">
+            <div class="feature-item">
+                <i class="fas fa-search"></i>
+                <span>بحث سريع</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-print"></i>
+                <span>طباعة سهلة</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-share-alt"></i>
+                <span>مشاركة فورية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- الصفحة الثانية -->
+    <section id="page2" class="page">
+        <div class="container">
+            <h2 class="section-title">حدد نوع الأدوية</h2>
+            
+            <div class="type-cards">
+                <button class="type-card" data-type="مسكنة">
+                    <div class="card-icon">
+                        <i class="fas fa-tablets"></i>
+                    </div>
+                    <h3>الأدوية المسكنة</h3>
+                    <p>تخفيف الآلام وخفض الحرارة</p>
+                    <div class="card-stats">
+                        <span>3 أدوية</span>
+                    </div>
+                    <div class="card-hover-effect"></div>
+                </button>
+                
+                <button class="type-card" data-type="هضمية">
+                    <div class="card-icon">
+                        <i class="fas fa-stomach"></i>
+                    </div>
+                    <h3>الأدوية الهضمية</h3>
+                    <p>علاج مشاكل الجهاز الهضمي</p>
+                    <div class="card-stats">
+                        <span>3 أدوية</span>
+                    </div>
+                    <div class="card-hover-effect"></div>
+                </button>
+
+                <button class="type-card" data-type="جلدية">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>الأدوية الجلدية</h3>
+                    <p>علاج الأمراض الجلدية</p>
+                    <div class="card-stats">
+                        <span>3 أدوية</span>
+                    </div>
+                    <div class="card-hover-effect"></div>
+                </button>
+            </div>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="info-content">
+                        <h4>معلومات دقيقة</h4>
+                        <p>بيانات موثوقة ومحدثة عن الأدوية</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="info-content">
+                        <h4>إرشادات آمنة</h4>
+                        <p>تعليمات الاستخدام الصحيح للأدوية</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-user-md"></i>
+                    <div class="info-content">
+                        <h4>خبراء الصيدلة</h4>
+                        <p>مصمم بواسطة صيادلة محترفين</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الصفحة الثالثة -->
+    <section id="page3" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2 id="page3-title" class="section-title">قائمة الأدوية - <span id="drug-type-name"></span></h2>
+                <div class="search-container">
+                    <input type="text" id="drug-search" placeholder="ابحث عن دواء...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+            
+            <div id="drug-list" class="drug-list-grid">
+                <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+            
+            <div class="action-buttons">
+                <button class="back-button" onclick="goToPage(2)">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>الرجوع</span>
+                </button>
+                <button id="print-list-btn" class="print-button">
+                    <i class="fas fa-print"></i>
+                    <span>طباعة القائمة</span>
+                </button>
+                <button id="export-list-btn" class="export-button">
+                    <i class="fas fa-download"></i>
+                    <span>تصدير PDF</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة تفاصيل الدواء -->
+    <div id="details-modal" class="modal-overlay">
+        <div class="modal-content glass-effect">
+            <button id="close-modal-btn" class="close-button">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h3 id="modal-drug-name"></h3>
+                    <div class="modal-actions-top">
+                        <button id="favorite-btn" class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button id="share-drug-btn" class="share-drug-btn">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="drug-details-content">
+                    <div class="image-section">
+                        <div class="image-container">
+                            <img id="modal-drug-image" src="" alt="صورة علبة الدواء">
+                            <div class="image-overlay">
+                                <button id="rotate-image-btn" class="rotate-btn" title="تدوير الصورة">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button id="zoom-image-btn" class="zoom-btn" title="تكبير الصورة">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="old-name-note" id="modal-old-name"></p>
+                        <div class="price-tag">
+                            <span id="modal-price"></span>
+                        </div>
+                    </div>
+                    <div class="text-details">
+                        <div class="detail-tabs">
+                            <button class="tab-btn active" data-tab="basic">المعلومات الأساسية</button>
+                            <button class="tab-btn" data-tab="usage">الاستخدام والجرعة</button>
+                            <button class="tab-btn" data-tab="notes">ملاحظات هامة</button>
+                        </div>
+                        <div class="tab-content active" id="basic-tab">
+                            <div class="detail-item">
+                                <i class="fas fa-flask"></i>
+                                <div class="detail-content">
+                                    <strong>التركيب:</strong>
+                                    <span id="modal-composition"></span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-capsules"></i>
+                                <div class="detail-content">
+                                    <strong>الشكل الصيدلاني:</strong>
+                                    <span id="modal-form"></span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-cogs"></i>
+                                <div class="detail-content">
+                                    <strong>آلية التأثير:</strong>
+                                    <span id="modal-mechanism"></span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-heartbeat"></i>
+                                <div class="detail-content">
+                                    <strong>الاستطباب:</strong>
+                                    <span id="modal-indication"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="usage-tab">
+                            <div class="detail-item">
+                                <i class="fas fa-prescription-bottle"></i>
+                                <div class="detail-content">
+                                    <strong>الجرعة:</strong>
+                                    <span id="modal-dosage"></span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-ruler"></i>
+                                <div class="detail-content">
+                                    <strong>العيار:</strong>
+                                    <span id="modal-caliber"></span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hand-point-up"></i>
+                                <div class="detail-content">
+                                    <strong>طريقة الاستعمال:</strong>
+                                    <span id="modal-usage"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="notes-tab">
+                            <div class="detail-item">
+                                <i class="fas fa-sticky-note"></i>
+                                <div class="detail-content">
+                                    <strong>ملاحظات:</strong>
+                                    <span id="modal-notes"></span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clipboard-list"></i>
+                                <div class="detail-content">
+                                    <strong>الخلاصة:</strong>
+                                    <span id="modal-summary"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button id="print-drug-btn" class="print-drug-btn">
+                        <i class="fas fa-print"></i>
+                        <span>طباعة بطاقة الدواء</span>
+                    </button>
+                    <button id="add-to-list-btn" class="add-to-list-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>إضافة لقائمتي</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>موقع معلومات الأدوية</h3>
+                <p>مصدرك الموثوق للمعلومات الدوائية في حمص</p>
+            </div>
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#">عن الموقع</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>تابعنا</h4>
+                <div class="social-links">
+                    <a href="#" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="تويتر"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="لينكدإن"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2023 | تصميم وتطوير: Youlla Al Abdullah</p>
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- مكتبات JavaScript -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
